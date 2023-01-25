@@ -1,0 +1,8 @@
+<h1>Listado de Héroes</h1>
+<mat-divider></mat-divider>
+<hr>
+<div class="grid">
+    <div *ngFor="let pelicula of peliculas">
+        <app-pelicula-tarjeta [pelicula]="pelicula"></app-pelicula-tarjeta>
+    </div>
+</div>

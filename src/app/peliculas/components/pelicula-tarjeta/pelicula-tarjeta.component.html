@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ pelicula.nombre }}</mat-card-title>
+        <mat-card-subtitle>{{ pelicula.TituloOriginal }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="pelicula | imagen" >
+
+    <mat-card-content>
+        <h3>{{ pelicula.Genero }}</h3>
+        <p>
+            <strong>Primera aparicion</strong> {{ pelicula.Pais }}
+            <br>
+            <strong>Personajes: </strong>  {{ pelicula.Sinopsis }}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button color="warn" [routerLink]="['/peliculas/', pelicula.id]">
+            Leer más
+        </button>
+    </mat-card-actions>
+
+</mat-card>

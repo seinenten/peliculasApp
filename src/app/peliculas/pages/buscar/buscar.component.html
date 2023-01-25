@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Buscador de Peliculas</h1>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="col-12">
+            <h3>Buscador</h3>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Escoge uno</mat-label>
+                <input type="text"
+                    placeholder="Buscar pelicula" aria-label="Number" 
+                    matInput [(ngModel)]="termino"
+                    [matAutocomplete]="auto"
+                    (input)="buscando()">
+
+
+                <mat-autocomplete #auto="matAutocomplete"
+                                    (optionSelected)="opcionSeleccionada( $event )">
+                    <mat-option 
+                        *ngFor="let pelicula of peliculas" 
+                        [value]="pelicula">
+                        {{ pelicula.nombre }}
+                    </mat-option>
+                    <mat-option value="" *ngIf="peliculas.length === 0 && termino.trim().length > 0 ">
+                        No se encontro nada con el termino {{ termino }}
+                    </mat-option>
+
+                </mat-autocomplete>
+            </mat-form-field>
+
+        </div>
+
+        <h2> Genero</h2>
+            <form #miFormulario="ngForm">
+                <div class="form-check">
+                    <input class="form-check-input" 
+                            type="radio"
+                            value="Accion"
+                            [(ngModel)]="genero"  
+                            name="radioGenero" 
+                            id="radioFemenino">
+                    <label class="form-check-label" for="radioFemenino">
+                        Accion
+                    </label>
+                </div>
+
+
+                <div class="form-check">
+                    <input class="form-check-input" 
+                            type="radio"
+                            value="Terror"
+                            [(ngModel)]="genero"
+                            name="radioGenero" 
+                            id="radioMasculino">
+                    <label class="form-check-label" for="radioMasculino">
+                        Terror
+                    </label>
+                </div>
+            </form>
+
+    </div>
+</div>

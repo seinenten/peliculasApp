@@ -1,0 +1,105 @@
+
+<br><br>
+<div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          <h2 class="title text-center mt-4">
+            Registro
+          </h2>
+
+
+          <form (ngSubmit)="guardar()"
+                [formGroup]="miFormulario"
+                class="form-box px-3"
+                autocomplete="off">
+            
+            
+            <div class="form-input">
+              <span><i class="fa fa-user"></i></span>
+            
+            
+              <input type="text" formControlName="nombre" placeholder="Nombre" tabindex="10">
+              
+            </div>
+            <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('nombre')">
+                        Debe de contener minimo 3 letras
+              </span>
+            
+            
+            <div class="form-input">
+              <span><i class="fa fa-user"></i></span>
+              <input type="text" formControlName="usuario" placeholder="Usuario" tabindex="10">
+            
+            </div>
+            <span class="form-text text-danger"
+                      *ngIf="campoNoEsValido('usuario')">
+                      Debe de contener minimo 3 letras
+              </span>
+            
+            
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="email" formControlName="correo" placeholder="Correo" tabindex="10">
+            </div>
+            <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('correo')">
+                        {{ emailErrorMsg  }}
+              </span>
+            
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" formControlName="pass" placeholder="Contraseña">
+            </div>
+            <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('pass')">
+                        {{ passErrorMsg  }}
+            </span>
+
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" formControlName="pass2" placeholder="Confirmar la contraseña">
+            </div>
+            <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('pass2')">
+                        Las contraseñas deben de ser iguales
+            </span>
+            
+            
+            
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" formControlName="condiciones">
+                <label class="custom-control-label" for="cb1">Aceptar Terminos y Condiciones</label>
+              </div>
+            </div>
+            
+            
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block text-uppercase"
+                      [disabled]="miFormulario.pending">
+                Registrame
+              </button>
+            </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+
+<!-- <h5>Valor del formulario</h5>
+<pre> {{ miFormulario.value | json }}</pre>
+<br>
+
+<h5>Valid</h5>
+<pre> {{ miFormulario.valid | json}}</pre>
+
+<h5>Valor del formulario</h5>
+<pre> {{ miFormulario.value | json }}</pre> -->
+<br>
