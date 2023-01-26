@@ -1,7 +1,14 @@
-
+<div class="float-end">
+  <span>
+      <a routerLink="./peliculas/listado">Peliculas <mat-icon class="text-dark" style="position: relative;" >navigate_next</mat-icon> </a> <a >Registro</a>  
+  </span>    
+</div>
 <br><br>
+
 <div class="container">
+  
     <div class="row px-3">
+      
       <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
         <div class="img-left d-none d-md-flex"></div>
 
@@ -27,17 +34,6 @@
             <span class="form-text text-danger"
                         *ngIf="campoNoEsValido('nombre')">
                         Debe de contener minimo 3 letras
-              </span>
-            
-            
-            <div class="form-input">
-              <span><i class="fa fa-user"></i></span>
-              <input type="text" formControlName="usuario" placeholder="Usuario" tabindex="10">
-            
-            </div>
-            <span class="form-text text-danger"
-                      *ngIf="campoNoEsValido('usuario')">
-                      Debe de contener minimo 3 letras
               </span>
             
             

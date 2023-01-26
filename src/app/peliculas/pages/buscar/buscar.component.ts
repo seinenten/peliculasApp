@@ -16,6 +16,8 @@ export class BuscarComponent implements OnInit {
 
   genero: string = "";
 
+  pais: string = ""
+
   constructor(
     private peliculasService: PeliculaService,
     private router: Router
@@ -25,8 +27,9 @@ export class BuscarComponent implements OnInit {
   }
 
   buscando() {
-    
-    this.peliculasService.getPeliculaPorBusqueda( this.termino.trim(), this.genero )
+    console.log(this.pais);
+    console.log(this.genero);
+    this.peliculasService.getPeliculaPorBusqueda( this.termino.trim(), this.genero, this.pais )
       .subscribe( peliculas => this.peliculas = peliculas )
 
   }

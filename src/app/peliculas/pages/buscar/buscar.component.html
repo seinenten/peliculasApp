@@ -1,4 +1,9 @@
 <div class="container">
+    <div class="float-end">
+        <span>
+            <a routerLink="./peliculas/listado">Peliculas <mat-icon class="text-dark" style="position: relative;" >navigate_next</mat-icon> </a> <a > Buscar </a>  
+        </span>    
+    </div>
     <div class="row">
         <div class="col-12">
             <h1>Buscador de Peliculas</h1>
@@ -58,6 +63,88 @@
                         Terror
                     </label>
                 </div>
+
+            <h2> pais</h2>
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="United States"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    United States
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="USA"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    USA
+                </label>
+            </div>
+
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="Mexico"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    Mexico
+                </label>
+            </div>
+
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="Spain"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    Spain
+                </label>
+            </div>
+
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="Canada"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    Canada
+                </label>
+            </div>
+
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio"
+                        value="Australia"
+                        [(ngModel)]="pais"  
+                        name="radioPais" 
+                        id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    Australia
+                </label>
+            </div>
+
+
+
+
             </form>
 
     </div>

@@ -4,8 +4,15 @@
     </mat-grid-tile>
 </mat-grid-list>
 
+
 <ng-template #divPelicula>
     <div class="container">
+        
+            <div class="float-end">
+                <span>
+                    <a routerLink="./peliculas/listado">Peliculas <mat-icon class="text-dark" style="position: relative;" >navigate_next</mat-icon> </a> <a > {{ pelicula.nombre }}  </a>  
+                </span>    
+            </div>
         <div class="row">
             <div class="col-6">
                 <h1> {{  pelicula.nombre }} <small> {{ pelicula.TituloOriginal }} </small> </h1>

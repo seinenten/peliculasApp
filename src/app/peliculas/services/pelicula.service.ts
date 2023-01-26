@@ -9,7 +9,8 @@ import { Pelicula } from '../interfaces/peliculas.interfaces';
 })
 export class PeliculaService {
 
-  private baseUrl: string = environment.baseUrl
+  private baseUrl: string = environment.baseUrl;
+
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +22,17 @@ export class PeliculaService {
     return this.http.get<Pelicula>(`${this.baseUrl}/peliculas/${ id }`);
   }
 
-  getPeliculaPorBusqueda(termino: string, termino2: string):Observable<Pelicula[]>{
-    if(termino2 !== ''){
+  getPeliculaPorBusqueda(termino: string, termino2: string, termino3: string):Observable<Pelicula[]>{
+    
+    if (termino3 !== '' && termino2 !== '' ){
+      return this.http.get<Pelicula[]>(`${ this.baseUrl }/peliculas?q=${ termino }&_limit=6&Genero=${termino2}&Pais=${termino3}`);
+
+    }else if (termino3 !== '' && termino2 === '' ){
+      return this.http.get<Pelicula[]>(`${ this.baseUrl }/peliculas?q=${ termino }&_limit=6&Pais=${termino3}`);
+
+    }else if (termino3 === '' && termino2 !== '')
       return this.http.get<Pelicula[]>(`${ this.baseUrl }/peliculas?q=${ termino }&_limit=6&Genero=${termino2}`);
-    }
+
     return this.http.get<Pelicula[]>(`${ this.baseUrl }/peliculas?q=${ termino }&_limit=6`);
   }
 
